@@ -1,0 +1,95 @@
+---
+title: "Extending R"
+order: 6
+format: html
+code-annotations: hover
+webr:
+  show-startup-message: false
+  df-print: kable
+
+filters:
+  - webr
+---
+
+## Packages
+
+### What are they?
+
+One of the things that makes R so widely used is the extensive package system. Packages are collections of functions and object types made by other R users to extend the abilities of R. For example, if you were asked to run a set of statistical analyses on a data set in R, you have a few options. You could manually write out the steps of the analysis using the base R functions or you could install and use a package that implements those analyses for you! If you need to do something in R, chances are there is a package you can use that will make that easier.
+
+### Installing Packages
+
+#### CRAN Packages
+
+The largest repository of R packages can be installed from CRAN through a function with only the name of the package needed. For example, if I wanted to install the vegan package, which is a widely used ecological analysis package, I can use this command:
+
+``` r
+install.packages("vegan")
+```
+
+This will then install that package to your R environment. However, if you are on the Bowdoin RStudio server, then the vast majority of packages you may need are already installed. As such, this command is restricted. If you absolutely need to have access to a package not already installed, you can override this restriction by modifying the command:
+
+``` r
+utils::install.packages("vegan")
+```
+
+This will then install the package to your local Microwave drive and allow you access to the package. The package will only be available to your local R environment, so if someone else needs to use the package, they will have to install it directly as well.
+
+#### Bioconductor
+
+For many biology-specific packages, they are accessible from the Bioconductor repository. To install packages from there, you first have to install the Bioconductor core package, then you can install the package you wish to use.
+
+``` r
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager") #Installs the core package
+BiocManager::install() #Installs Bioconductor
+BiocManager::install("treeio") #Installs the treeio package
+```
+
+#### Github
+
+Additionally, there is a separate installation method for packages that are not in either of these repositories but are on Github, a code repository site used in industry and academia.
+
+``` r
+devtools::install_github('author_name/repository')
+```
+
+### Loading Packages
+
+Now that you have a package installed, you have to tell R that it exists so that you can use it. To do so, you use the `library()` command.
+
+``` r
+library(package_name)
+```
+
+::: callout-note
+Unlike installing packages, the package name does not have to be in a set of quotes. This is to make it easier to load packages.
+:::
+
+This command can load any package that is installed and will automatically load any other packages that are required for the package to function.
+
+You can also see what packages are available and loaded in the **Packages** tab located in the bottom right panel of RStudio. You can select the check boxes besides packages to load and unload them as well.
+
+## User-defined Functions
+
+### What are they?
+
+User-defined functions are functions that are made by you for your use. By making your own function, you can turn a multistep process that you may need to run many times into something that can be done in a single line of R code.
+
+For example, if you had to regularly edit a data frame, find the mean of the values in a specific column, and create a new data frame using another set of rows, Instead of writing out the list of functions to do this every time it is needed, you can simply write it once when you declare your function and then use that single function to get your results.
+
+### Syntax
+
+Making your own functions follows a simple syntax that uses `function()`
+
+``` {.r .R}
+function_name <- function(parameter1, parameter2) {
+  var1 <- parameter1*parameter2
+  var2 <- var1+parameter2*mean(c(parameter1, parameter2))
+  return(var2)
+  }
+```
+
+The name of your function is the variable you are assigning the `function()` call to. Any parameters necessary for your function are declared within the `function()` call. Then, in the curly braces, you write the functions that are done when you use your function. You then finish with the `return()` function. The variable in the `return()` function is what your function will output when used.
+
+Once declared, you can then use your function like you would use any other function.

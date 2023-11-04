@@ -1,0 +1,42 @@
+---
+title: "Functions"
+order: 4
+format: html
+code-annotations: hover
+webr:
+  show-startup-message: false
+
+filters:
+  - webr
+---
+
+# R and Functional Programming
+
+At the core of using R is utilizing functions, which are statements that takes in data and a set of parameters and returns an object with something being done to the data provided. Functions are how you read in your data sets, clean them up, do statistical analyses, and visualize your data. You can even make your own!
+
+## Function Syntax
+
+Before we get into some basic and common functions, one must first understand the components of a function. Below is the mean function, which as the name implies, finds the mean of a given set of values.
+
+```{r}
+fav_nums <- c(1,5,12,8,58) #Making a vector of values
+mean_fav <- mean(x = fav_nums, na.rm = TRUE)
+mean_fav
+```
+
+The structure of a function is the function's name followed by a set of parentheses. For some functions that require no additional information, that is all you need. However, most functions require providing data objects and parameters so that the function is applied to a specific object in a specific way. For example, in the `mean()`function above, there are two parameters:`x`and`na.rm\`
+
+In this case, the `x` parameter is where we provide the data object that `mean()` uses. We assign the data object `fav_nums` to the `x` parameter using the parameter assignment operator, `=`. Generally, the very first parameter of a function will be where you provide the data object.
+
+Similarly to assigning the `fav_nums` object to `x`, the logical value `TRUE` is assigned to the `na.rm` parameter, which tells the `mean()` function to remove any `NA` values in the provided set of numbers if there was any.
+
+Something that makes writing functions easier is that there is a given order of parameters in a specific function. For the `mean()` function, there are three named parameters: `x`, `trim`, and `na.rm`. Rather than having to provide the parameter name, you can just provide the value for the parameter instead of the full `parameter = value` statement.
+
+```{r}
+mean_fav <- mean(fav_nums)
+mean_fav
+```
+
+Additionally, functions can have some parameters have default values, meaning if you do not provide a value in your function statement, it will automatically use a specific value defined by the function creator. An example of this is for the first usage of the `mean()` function. I did not provide a value for the `trim` parameter, yet the function still worked. This is because the `mean()` function provides a default value for that parameter. You can override that default value by setting the parameter to what you wish. An example is that the default parameter value for `na.rm` for the `mean()` function is `FALSE`, but I set `na.rm` to `TRUE`.
+
+The most readily available source of information for understanding what a function does and what the specific parameters it uses is the help tab in RStudio. You can search by the function name and it will provide a reference guide to the function.

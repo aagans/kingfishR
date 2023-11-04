@@ -1,0 +1,6 @@
+---
+title: "Purpose"
+order: 1
+---
+
+This R guide was created by Aale J. Agans at the Hawkwood Research Group for the Bowdoin College Biology Department. The purpose of the guide is to provide a comprehensive intro to the usage of R in an academic setting, establish good practices to enable further learning, and the specific applications of R for the biological sciences. This guide is currently under development!

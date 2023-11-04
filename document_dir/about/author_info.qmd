@@ -1,0 +1,20 @@
+---
+title: "The Author"
+order: 2
+---
+
+Aale J. Agans is an undergraduate student at Bowdoin College majoring in evolutionary and ecological biology with interests in ecological genetics and the evolution of symbiosis in terrestrial systems. As a proponent for open and free access in academia, most of their work in bioinformatics is developing applications and pipelines that are accessible and easy to use for researchers at all levels.
+
+## Education
+
+Bowdoin College \| Brunswick, ME
+
+B.A. in Biology; Evolution, Ecology, and Marine Biology Concentration \| August 2021 - Present
+
+## Experience
+
+Bioinformatics Lead \| Hawkwood Research Group \| August 2023 - Present
+
+Research Assistant \| Bowdoin College \| January 2023 - Present
+
+R Learning Assistant \| Bowdoin College \| August 2023 - Present

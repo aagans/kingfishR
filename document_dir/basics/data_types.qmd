@@ -1,0 +1,165 @@
+---
+title: "Objects and Data Structures"
+order: 3
+format: html
+code-annotations: hover
+webr:
+  show-startup-message: false
+  df-print: kable
+
+filters:
+  - webr
+---
+
+## Data Types
+
+Now you know about variables, but what can you store in one? The short answer is everything! R has a wide variety of different data types that are used for different things. I will break down the most common ones you will use in this section. First, there are two distinct categories of data types: atomic data types and data structures.
+
+### Atomic Data Types
+
+Atomic data types are the most simple data types in R. These are the building blocks of data structures. Base R has the following atomic data types that you will commonly use:
+
+-   Logical - TRUE or FALSE
+
+-   Numeric - 1 or 1.574, or pi
+
+-   character - "hello!", "a", "STRING"
+
+While these data types are simple, they each have their own quirks that can cause confusion when they are first used.
+
+Additionally, R does have [other atomic data types](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#index-atomic) that this guide will not cover here. They are either not widely used or are for have more advanced use-cases.
+
+#### Logicals
+
+Logicals are a binary data type, either being TRUE or FALSE. They must be upper case, or else R interprets it as a variable name. Additionally, R interprets TRUE as 1 and FALSE as 0, leading to interesting results when this data type is used with numerics. For example, see what happens when you add TRUE to 5:
+
+```{r}
+TRUE + 5
+```
+
+This functionality can be useful in some cases, but just be aware of it in case you are getting results that do not make sense to you when dealing with logicals. Their primary use is in conditional functions, which we will explore later in this guide.
+
+#### Numerics/Doubles
+
+Numerics, also called doubles, are numbers. This can be either whole numbers, such as 9 or 3948, or they can be decimals, such as 8.47 or 937.5
+
+```{r}
+#| results: hold
+typeof(584)
+typeof(98.37483277777)
+typeof(pi)
+```
+
+#### Characters Vectors/Strings
+
+Character vectors, also called strings, are a set of text characters. Anything located between a pair of double or single quotes will be considered as a character vector. This includes numbers, text, and symbols. If you want to have your character vector contain quotes, you can use a set of single quotes instead of double quotes and vice versa.
+
+``` r
+this_is_a_character_vector <- "Hi! Many different symbols can be in a character"
+quotes_in_string <- 'I have switched to "single quotes" to allow double quotes'
+```
+
+### Data Structures
+
+Data structures are more complex data types that are made of the different atomic data types. The most commonly used data structures include:
+
+-   Vectors
+
+-   Lists
+
+-   Matrices
+
+-   Data frames
+
+-   Factors
+
+Lets go over what differentiates these data structures.
+
+#### Vectors
+
+Vectors are the most common data structure. They are made of multiple objects of a single atomic data type. The most common way to create a vector is the [concatenate function](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/c), c(), where each atomic object is separated by a comma:
+
+```{r}
+num_vector <- c(1, 2, 3)
+num_vector
+```
+
+Vectors are useful as a lot of R functions are vectorized, meaning one function is applied to every object in the given vector.
+
+```{r}
+adding_two <- num_vector + 2
+adding_two
+```
+
+The most important thing to remember about vectors is that they can only contain one type of atomic data objects. Lets see when we try to break that!
+
+```{r}
+broken_vector <- c(1, 2, "hi")
+broken_vector
+```
+
+As you can see, R has converted the numerics 1 and 2 into characters in order for the vector to be created. Be careful of these conversions, as it can cause unintended consequences.
+
+#### Lists
+
+So what if you want to have a vector that contains different data types? Well, then you use lists! Lists are just like vectors in that they hold multiple objects, just they are not limited to a single data type. A list can even contain vectors or other lists.
+
+```{r}
+cool_list <- list(1, TRUE, c("vector", "in", "a", "list"))
+cool_list
+```
+
+#### Matrices
+
+Matrices (the plural for matrix) are two-dimensional vectors. They are made of rows and columns, but every data object stored in them must be of the same type. This means if you store numerics in a matrix, that matrix will only store numerics.
+
+```{r}
+my_matrix <- matrix(1:20, nrow = 4, ncol = 5, byrow = FALSE)
+my_matrix
+
+#What happens when we try to change one of the data objects in the matrix to a character?
+my_matrix[1,1] <- "hi"
+my_matrix #It converts all of the data objects into characters!
+```
+
+While matrices are computationally fast due to their simplicity, their limitations can be too restrictive. Additionally, the conversion of object types can cause confusion in downstream applications. This is why we mainly use data frames!
+
+#### Data Frames
+
+Data frames are to lists what matrices are to vectors. Rather than being limited to the whole object only containing one data type, each column can contain a different data type. This means if you have a spreadsheet of names and heights, you can have one column contain characters (names), and the other column contain numbers (height in inches) without having R convert either column into a different type.
+
+```{r}
+my_dataframe <- data.frame(Name = c("Crosby", "Stills", "Nash"), Height = c(70, 68, 72), Nationality = c("American", "American", "British"))
+my_dataframe
+```
+
+Data frames will be used greatly throughout this guide due to the versatility and ease of use. Most data sets you will create and explore in biology will work best in this data type, so make sure you understand what differentiates a data frame from the other data structures discussed above!
+
+##### Data Frame Operators
+
+There are a set of operators related to working with data frames that allow one to extract specific sets of data from the object.
+
+|          Name           |  Symbol  | Type  |                                   Usage                                    |
+|:-----------------------:|:--------:|:-----:|:--------------------------------------------------------------------------:|
+| Named element extrator  |    \$    | Slice |  Extracts and returns the element of a given name, such as a named column  |
+|  Slice list extractor   |   \[\]   | Slice | Extracts element(s) at a given index location and returns a list of values |
+| Slice element extractor | \[\[\]\] | Slice |         Extracts and returns element(s) at a given index location          |
+
+```{r}
+#| results: hold
+my_dataframe$Name
+
+#The first value in the slice list extractor is the row index number
+#The second value is the column index number, and they are separated by a comma
+my_dataframe[1,1]
+
+#You can also keep oen of the arguments empty to return all of that type
+my_dataframe[1,] #Returns all columns of the first row
+
+#If you want to return the element and not a list containing the element, use [[]]
+my_dataframe[[1,1]]
+```
+
+### Missing Data
+
+There are three ways to represent missing data in R. For data that does not exist, R has the object `NULL`. Setting a variable equal to `NULL` is a way to delete the object that variable is assigned to. If a value is unknown but does exist, then R uses the object `NA`. Then, in the case of impossible values, such as dividing by zero, R has the object `NaN`, or not a number.

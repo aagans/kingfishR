@@ -1,0 +1,55 @@
+---
+title: An R Guide for Bowdoin Biology Students
+bibliography: "/home/aagans/r_guide/references_resources/references.bib"
+csl: "/home/aagans/r_guide/references_resources/council-of-science-editors.csl"
+format: html
+code-annotations: hover
+webr:
+  show-startup-message: false
+
+filters:
+  - webr
+---
+
+Welcome to the guide for using R as a biology student at Bowdoin College! This guide will act as a comprehensive introduction to the R statistical programming language and its applications in the field of biology. Included in this guide are: an introduction to using R, an overview of R structure, data manipulation, data visualization/graphing, statistical analyses, biology-specific packages, and intermediate/advanced R use cases. This guide can be used by complete R beginners, people with experience with other programming languages, and even people with R experience outside the field of biology.
+
+# What is R?
+
+R is a statistical programming language developed by Ross Ihaka and Robert Gentleman.[@giorgi2022] Based on the principles of free (as in freedom) open source software (FOSS), the R programming language is freely available at the [Comprehensive R Archive Newtork (CRAN)](https://cran.r-project.org/) and can run on Windows, Linus, and MacOS platforms.
+
+So why use R instead of other statistical packages, such as SPSS, SAS, Stata, Prism, or others?
+
+-   It is a standard tool in most academic disciplines that use statistical analyses for research and industry.[@muenchen2012] In fact, over 54% of all published literature articles in the top 30 journals in ecology used R.[@lai2019]
+
+-   R has an active community supporting it. Tens of thousands of packages, the main way of extended R's capabilities, have been created and are actively maintained.[@thecomp]
+
+-   Due to its open source nature, the source code can be freely investigated, ensuring confidence in its accuracy.
+
+-   It is free!
+
+# What can I do with R?
+
+R is a programming language, so almost anything you can think of! However, you most likely would not want to make a video game using R. R is specialized to statistical analysis and data science. We will be using it to process our data, run statistical tests, and to graph our results. However, this is just the tip of the iceberg of what you can do with R! From analyzing genomic data sets, to creating machine learning models, to GIS analysis, R can do it all and even more.
+
+# How do I use this guide?
+
+This guide is broken into different sections that each cover information about R. In these sections, there will be text explanations such as this, and also code blocks with relevant R code. By pressing the "Run code" button, the program will run and you will be able to see the results below the block. For example, try this simple code block:
+
+```{webr-r}
+1 + 1
+```
+
+If it was successful, then you should see a result that says 2. Additionally, there will be some code blocks without the "Run code" button, which are just to explain specific concepts. See below:
+
+``` r
+var <- 1
+two.var <- var + var
+```
+
+For some code blocks, there will be code annotations on the right side that appear when you hover your mouse cursor over the icon.
+
+``` {.r .R}
+var <- 1 # <1>
+```
+
+1.  Here is a code annotation!

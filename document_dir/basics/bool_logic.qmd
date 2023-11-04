@@ -1,0 +1,44 @@
+---
+title: "Boolean Logic"
+order: 5
+format: html
+code-annotations: hover
+webr:
+  show-startup-message: false
+  df-print: kable
+
+filters:
+  - webr
+---
+
+# Evaluating and Comparing Data
+
+A common practice in statistics and programming in general is comparing data in specific ways. When an evaluation only can return true or false, then that is an example of Boolean logic. For example, if I asked you if the number 1 is in the set of all odd numbers, then the answer would be true. Additionally, if I asked if 5 equals 84, then you would say false. By using Boolean operators, R can evaluate logic expressions and return the logical data type `TRUE` or `FALSE`. In addition to the logicals, R treats the number 0 as false and 1 as true.
+
+## Boolean Operators
+
+R uses a set of Boolean operators to build comparison expressions.
+
+|                Name                |    Type    | Symbol |                             Usage                              |
+|:----------------------------------:|:----------:|:------:|:--------------------------------------------------------------:|
+|       Greater than operator        | Comparison |   \>   |       Checks if an object is greater than another object       |
+|         Less than operator         | Comparison |   \<   |        Checks if an object is less than another object         |
+|          Equals operator           | Comparison |   ==   |          Check if two objects are equal to each other          |
+| Greater than or equals to operator | Comparison |  \>=   | Checks if an object is greater than or equal to another object |
+|  Less than or equals to operator   | Comparison |  \<=   |  Checks if an object is less than or equal to another object   |
+|         Not equal operator         | Comparison |   !=   |       Checks if an object is not equal to another object       |
+|            AND operator            |  Logical   |   &    |             Returns true if both objects are true              |
+|            OR operator             |  Logical   |   \|   |      Returns true if at least one of the objects is true       |
+|            NOT operator            |  Logical   |   !    |      Returns the opposite logical value of a given object      |
+|            IN operator             |  Logical   |  %in%  |     Determines if a given object is within another object      |
+
+A common function used with logical expressions is the `which()` function. By giving it a logical expression, it will return the index values of items in a vector-like object that match the expression. For example if I had a data set of famous biologists and I wanted to find which of them specialized in genetics, I would use the `which()` function.
+
+```{r}
+famous_biologists <- data.frame(first_name = c("Charles", "Barbara", "Gregor"),
+                                last_name = c("Darwin", "McClintock", "Mendel"),
+                                subfield = c("evolution", "genetics", "genetics"))
+which(famous_biologists$subfield == "genetics")
+```
+
+These results mean that rows 2 and 3 have their sub field category equal to genetics.

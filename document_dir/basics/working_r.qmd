@@ -1,0 +1,111 @@
+---
+title: "Variables and Arithmetic"
+order: 2
+format: html
+code-annotations: hover
+webr:
+  show-startup-message: false
+
+filters:
+  - webr
+---
+
+## R Syntax & Structure
+
+Unlike other statistical programs you may be familiar with, such as Prism, R does not have a GUI (graphical user interface). Rather, R is a programming language. Instead of clicking buttons and choosing a specific statistical test from a list, you have to build a command and run it.
+
+At the most basic level, R is about loading data into objects (also called variables), doing something to that object using a function, and outputting that modified data to a new object. In order to assign data to an object, one uses an assignment operator. For example:
+
+```{r}
+object_1 <- 1
+another_object <- object_1 + object_1
+print(another_object)
+```
+
+### Assignment Operator \<-
+
+In this case, we assigned the value 1 to the variable object_1 using the assignment operator \<-. Whatever is to the left of the assignment operator is the name of the variable. Whatever is to the right of the operator is what the variable name is assigned to.
+
+### Variables & Naming Conventions
+
+Variables can be as simple as a number such as 1, to as complex as a data set composed of hundreds of rows and columns. Variable names can be composed of any alphanumeric characters along with periods and underscores. However, the variable name can not start with a number or an underscore. Which variable assignments would work?
+
+``` r
+var1 <- 5 # <1>
+var2 <- "hello!" # <1>
+3var <- "Cats are cool" # <2>
+```
+
+1.  This would work!
+2.  This one starts with a number, so it would not work
+
+Variables are going to store data that you work with throughout your R script, so there are a few conventions on how to name them to make their use as easy as possible. Try to aim for short and descriptive variable names. If you have to repeatedly use the variable, a variable name that is long will be cumbersome to use. Additionally, for ease of reading your code, a descriptive name of what the object is makes it easier for understanding what is going on. For example:
+
+``` r
+list_of_my_favorite_odd_numbers <- c(1,9,19) 
+#This is a long name! 
+#Do you want to have to type it everytime you want to use this object?
+
+var1 <- 15 
+#This name is not descriptive. 
+#When you later use var1 in your script, are you going to know what it stores?
+
+#Lets try to improve those names
+fav_odd_nums <- c(1,9,19)
+#This is shorter than the original but just as descriptive
+
+fifteen <- 15
+#Concise and descriptive!
+```
+
+Another convention is how to separate words in your variable name. R will not allow you to put spaces in a variable name, as it interprets that as two different variables. The R style guide recommends using underscores (\_) as the connector between words in your variable name. This style is called Snake Case, for it was popularized by the programming language Python. An example are the variables with multiple words in the above code blocks. Three other naming conventions that are common in R are Pascale Case, Camel Case and Period Separated.
+
+``` r
+snake_case <- "This is Snake Case because the words are separated by an _"
+PascaleCase <- "Each word is capitalized in Pascale Case"
+camelCase <- "Words after the first one are capitalized in Camel Case"
+period.separated <- "Words are separated by a period"
+```
+
+While there is no functional reason to not use these styles, the R style guide does suggest the usage of Snake Case due to removing ambiguity. However, this is a recent change. If you look at older R code, you will see that the Period Separated convention is widely used.
+
+Please just try to stay consistent in your naming conventions, and while we recommend the usage of Snake Case, it is not required.
+
+::: callout-tip
+R is case sensitive! A variable name of years_since_x is not the same as Years_since_x or any other variation. R is extremely pedantic, it will do exactly what you tell it to do, not what you want it to do. Creating different variables that only differ in case is highly discouraged due to a high chance of later confusion.
+:::
+
+### Arithmetic Operators
+
+R has many other operators that can be used beyond the assignment operator. Listed below are additional assignment and arithmetic operators. Other operators do exist and will be explained in a later section.
+
+|             Name              |    Type    | Symbol |                                   Usage                                   |
+|:-----------------------------:|:----------:|:------:|:-------------------------------------------------------------------------:|
+| Variable assignment operator  | Assignment |  \<-   |                    Assign an object to a variable name                    |
+| Parameter assignment operator | Assignment |   =    |               Assign an object to a parameter in a function               |
+|       Addition operator       | Arithmetic |   \+   |                           Add numerics together                           |
+|     Subtraction operator      | Arithmetic |   \-   |                    Subtracts numerics from one another                    |
+|    Multiplication operator    | Arithmetic |   \*   |                       Multiplies numerics together                        |
+|       Division operator       | Arithmetic |   /    |                             Divides numerics                              |
+|       Exponent operator       | Arithmetic |   \^   |             Finds the value of a numeric to a given exponent              |
+|       Modulus operator        | Arithmetic |   %%   |               Returns the remainder when dividing numerics                |
+|   Integer division operator   | Arithmetic |  %/%   | Returns a numeric truncated to the nearest integer when dividing numerics |
+
+```{r}
+#| results: hold
+12 + 5
+10 - 3
+3*4
+76/4
+4^2
+12%%5
+24%/%5
+```
+
+One core aspect of R arithmetic operators is that they are vectorized. If you have a vector containing multiple numbers and add it to a different vector containing other numbers, the first set of numbers will be added together, and so will the second set, and so on until every element set is added together.
+
+```{r}
+vec_1 <- c(1,2,3)
+vec_2 <- c(10, 20, 30)
+vec_1 + vec_2
+```
