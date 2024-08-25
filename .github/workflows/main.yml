@@ -20,3 +20,4 @@ jobs:
           destination-username: 'aagans'
           destination-repository: 'aagans.github.io'
           commit-email: 'ajagans812@gmail.com'
+          destination-branch: 'main'
