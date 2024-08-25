@@ -16,7 +16,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-files: '_site/'
+          source-files: '_site/*'
           destination-username: 'aagans'
           destination-repository: 'aagans.github.io'
           commit-email: 'ajagans812@gmail.com'
