@@ -1,7 +1,7 @@
 ---
 title: An R Guide for Bowdoin Biology Students
-bibliography: "/home/aagans/r_guide/references_resources/references.bib"
-csl: "/home/aagans/r_guide/references_resources/council-of-science-editors.csl"
+bibliography: "/Users/aale/Documents/Projects/kingfishR/references_resources/references.bib"
+csl: "/Users/aale/Documents/Projects/kingfishR/references_resources/council-of-science-editors.csl"
 format: html
 code-annotations: hover
 webr:

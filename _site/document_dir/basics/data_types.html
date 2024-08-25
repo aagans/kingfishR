@@ -363,7 +363,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Additionally, R does have <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#index-atomic">other atomic data types</a> that this guide will not cover here. They are either not widely used or are for have more advanced use-cases.</p>
 <section id="logicals" class="level4">
 <h4 class="anchored" data-anchor-id="logicals">Logicals</h4>
-<p>Logicals are a binary data type, either being TRUE or FALSE. They must be upper case, or else R interprets it as a variable name. Additionally, R interprets TRUE as 1 and FALSE as 0, leading to interesting results when this data type is used with numerics. For example, see what happens when you add TRUE to 5:</p>
+<p>Logicals are a binary data type, either being TRUE or FALSE. They must be upper case or else R interprets it as a variable name. Additionally, R interprets TRUE as 1 and FALSE as 0, leading to interesting results when this data type is used with numerics. For example, see what happens when you add TRUE to 5:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cn">TRUE</span> <span class="sc">+</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -495,10 +495,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>There are a set of operators related to working with data frames that allow one to extract specific sets of data from the object.</p>
 <table class="table">
 <colgroup>
-<col style="width: 21%">
-<col style="width: 8%">
-<col style="width: 5%">
-<col style="width: 64%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 51%">
 </colgroup>
 <thead>
 <tr class="header">

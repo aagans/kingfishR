@@ -348,22 +348,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="assignment-operator--" class="level3">
 <h3 class="anchored" data-anchor-id="assignment-operator--">Assignment Operator &lt;-</h3>
-<p>In this case, we assigned the value 1 to the variable object_1 using the assignment operator &lt;-. Whatever is to the left of the assignment operator is the name of the variable. Whatever is to the right of the operator is what the variable name is assigned to.</p>
+<p>In this case, we assigned the value 1 to the variable object_1 using the assignment operator &lt;-. Whatever is to the left of the assignment operator is the name of the variable. Whatever is to the right of the operator is the data object the variable name is assigned to.</p>
 </section>
 <section id="variables-naming-conventions" class="level3">
 <h3 class="anchored" data-anchor-id="variables-naming-conventions">Variables &amp; Naming Conventions</h3>
-<p>Variables can be as simple as a number such as 1, to as complex as a data set composed of hundreds of rows and columns. Variable names can be composed of any alphanumeric characters along with periods and underscores. However, the variable name can not start with a number or an underscore. Which variable assignments would work?</p>
+<p>Variables can be as simple as a number such as 1 to as complex as a data set composed of hundreds of rows and columns. Variable names can be composed of any alphanumeric characters along with periods and underscores. However, the variable name can not start with a number or an underscore. Which variable assignments would work?</p>
 <div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a>var1 <span class="ot">&lt;-</span> <span class="dv">5</span></span>
 <span id="annotated-cell-2-2"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a>var2 <span class="ot">&lt;-</span> <span class="st">"hello!"</span></span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a>3var <span class="ot">&lt;-</span> <span class="st">"Cats are cool"</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1,2" data-code-annotation="1" data-code-cell="annotated-cell-2">This would work!</span>
+<span data-code-annotation="1" data-code-cell="annotated-cell-2" data-code-lines="1,2">This would work!</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="3" data-code-annotation="2" data-code-cell="annotated-cell-2">This one starts with a number, so it would not work</span>
+<span data-code-annotation="2" data-code-cell="annotated-cell-2" data-code-lines="3">This one starts with a number, so it would not work</span>
 </dd>
 </dl>
 <p>Variables are going to store data that you work with throughout your R script, so there are a few conventions on how to name them to make their use as easy as possible. Try to aim for short and descriptive variable names. If you have to repeatedly use the variable, a variable name that is long will be cumbersome to use. Additionally, for ease of reading your code, a descriptive name of what the object is makes it easier for understanding what is going on. For example:</p>
@@ -407,10 +407,10 @@ Tip
 <p>R has many other operators that can be used beyond the assignment operator. Listed below are additional assignment and arithmetic operators. Other operators do exist and will be explained in a later section.</p>
 <table class="table">
 <colgroup>
-<col style="width: 24%">
-<col style="width: 9%">
-<col style="width: 6%">
-<col style="width: 59%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -495,7 +495,7 @@ Tip
 [1] 4</code></pre>
 </div>
 </div>
-<p>One core aspect of R arithmetic operators is that they are vectorized. If you have a vector containing multiple numbers and add it to a different vector containing other numbers, the first set of numbers will be added together, and so will the second set, and so on until every element set is added together.</p>
+<p>One core aspect of R arithmetic operators is that they are vectorized (we will cover vectors next!). If you have a vector containing multiple numbers and add it to a different vector containing other numbers, the first set of numbers will be added together, and so will the second set, and so on until every element set is added together.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>vec_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>vec_2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
