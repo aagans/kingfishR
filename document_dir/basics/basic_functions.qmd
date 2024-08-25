@@ -24,7 +24,7 @@ mean_fav <- mean(x = fav_nums, na.rm = TRUE)
 mean_fav
 ```
 
-The structure of a function is the function's name followed by a set of parentheses. For some functions that require no additional information, that is all you need. However, most functions require providing data objects and parameters so that the function is applied to a specific object in a specific way. For example, in the `mean()`function above, there are two parameters:`x`and`na.rm\`
+The structure of a function is the function's name followed by a set of parentheses. For some functions that require no additional information, that is all you need. However, most functions require providing data objects and parameters so that the function is applied to a specific object in a specific way. For example, in the `mean()`function above, there are two parameters:`x`and`na.rm`
 
 In this case, the `x` parameter is where we provide the data object that `mean()` uses. We assign the data object `fav_nums` to the `x` parameter using the parameter assignment operator, `=`. Generally, the very first parameter of a function will be where you provide the data object.
 
@@ -37,6 +37,6 @@ mean_fav <- mean(fav_nums)
 mean_fav
 ```
 
-Additionally, functions can have some parameters have default values, meaning if you do not provide a value in your function statement, it will automatically use a specific value defined by the function creator. An example of this is for the first usage of the `mean()` function. I did not provide a value for the `trim` parameter, yet the function still worked. This is because the `mean()` function provides a default value for that parameter. You can override that default value by setting the parameter to what you wish. An example is that the default parameter value for `na.rm` for the `mean()` function is `FALSE`, but I set `na.rm` to `TRUE`.
+Additionally, functions can have some parameters have default values. These default values are what a function uses if you do not provide an alternative value. An example of this is for the first usage of the `mean()` function. I did not provide a value for the `trim` parameter, yet the function still worked. This is because the `mean()` function provides a default value for that parameter. You can override that default value by setting the parameter to what you wish. An example is that the default parameter value for `na.rm` for the `mean()` function is `FALSE`, but I set `na.rm` to `TRUE`.
 
 The most readily available source of information for understanding what a function does and what the specific parameters it uses is the help tab in RStudio. You can search by the function name and it will provide a reference guide to the function.

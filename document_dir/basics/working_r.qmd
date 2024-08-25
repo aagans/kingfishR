@@ -24,11 +24,11 @@ print(another_object)
 
 ### Assignment Operator \<-
 
-In this case, we assigned the value 1 to the variable object_1 using the assignment operator \<-. Whatever is to the left of the assignment operator is the name of the variable. Whatever is to the right of the operator is what the variable name is assigned to.
+In this case, we assigned the value 1 to the variable object_1 using the assignment operator \<-. Whatever is to the left of the assignment operator is the name of the variable. Whatever is to the right of the operator is the data object the variable name is assigned to.
 
 ### Variables & Naming Conventions
 
-Variables can be as simple as a number such as 1, to as complex as a data set composed of hundreds of rows and columns. Variable names can be composed of any alphanumeric characters along with periods and underscores. However, the variable name can not start with a number or an underscore. Which variable assignments would work?
+Variables can be as simple as a number such as 1 to as complex as a data set composed of hundreds of rows and columns. Variable names can be composed of any alphanumeric characters along with periods and underscores. However, the variable name can not start with a number or an underscore. Which variable assignments would work?
 
 ``` r
 var1 <- 5 # <1>
@@ -80,7 +80,7 @@ R is case sensitive! A variable name of years_since_x is not the same as Years_s
 R has many other operators that can be used beyond the assignment operator. Listed below are additional assignment and arithmetic operators. Other operators do exist and will be explained in a later section.
 
 |             Name              |    Type    | Symbol |                                   Usage                                   |
-|:-----------------------------:|:----------:|:------:|:-------------------------------------------------------------------------:|
+|:----------:|:----------:|:----------:|:----------------------------------:|
 | Variable assignment operator  | Assignment |  \<-   |                    Assign an object to a variable name                    |
 | Parameter assignment operator | Assignment |   =    |               Assign an object to a parameter in a function               |
 |       Addition operator       | Arithmetic |   \+   |                           Add numerics together                           |
@@ -102,7 +102,7 @@ R has many other operators that can be used beyond the assignment operator. List
 24%/%5
 ```
 
-One core aspect of R arithmetic operators is that they are vectorized. If you have a vector containing multiple numbers and add it to a different vector containing other numbers, the first set of numbers will be added together, and so will the second set, and so on until every element set is added together.
+One core aspect of R arithmetic operators is that they are vectorized (we will cover vectors next!). If you have a vector containing multiple numbers and add it to a different vector containing other numbers, the first set of numbers will be added together, and so will the second set, and so on until every element set is added together.
 
 ```{r}
 vec_1 <- c(1,2,3)
