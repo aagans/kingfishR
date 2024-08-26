@@ -2,12 +2,12 @@ project:
   type: website
 
 website:
-  title: "R for Bowdoin Biology"
+  title: "KingfishR: A Bowdoin Biology R Guide"
   site-path: "/~aagans/"
   page-navigation: true
   sidebar:
     logo: images/bcc.png
-    title: "R for Bowdoin Biology Students"
+    title: "KingfishR: A Bowdoin Biology R Guide"
     style: "docked"
     search: true
     collapse-level: 1

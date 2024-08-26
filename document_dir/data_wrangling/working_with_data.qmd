@@ -1,0 +1,12 @@
+---
+title: "Working with Dataframes"
+order: 2
+editor: visual
+format: html
+code-annotations: hover
+webr:
+  show-startup-message: false
+
+filters:
+  - webr
+---
