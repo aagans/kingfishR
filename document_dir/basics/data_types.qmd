@@ -140,7 +140,7 @@ Data frames will be used greatly throughout this guide due to the versatility an
 There are a set of operators related to working with data frames that allow one to extract specific sets of data from the object.
 
 |          Name           |  Symbol  | Type  |                                   Usage                                    |
-|:----------:|:----------:|:----------:|:------------------------------------:|
+|:-----------------------:|:--------:|:-----:|:--------------------------------------------------------------------------:|
 | Named element extrator  |    \$    | Slice |  Extracts and returns the element of a given name, such as a named column  |
 |  Slice list extractor   |   \[\]   | Slice | Extracts element(s) at a given index location and returns a list of values |
 | Slice element extractor | \[\[\]\] | Slice |         Extracts and returns element(s) at a given index location          |

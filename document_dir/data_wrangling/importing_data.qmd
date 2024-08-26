@@ -10,3 +10,59 @@ webr:
 filters:
   - webr
 ---
+
+## Anatomy of Data Files
+
+During your time with R, you will be working with data from various sources. Whether these data files are given to you or you make them yourself, they all will share some common traits. Data files to be used in R are normally rectangular, meaning they are in the format of rows (horizontal) and columns (vertical). Columns commonly have labels, called headers. R will normally treat the first row of a data file as the headers of your data. However, best practice indicates that rows should not include labels. R will treat row labels as just another column of data, which can cause complications in future data wrangling.
+
+::: callout-note
+If you are making your own data files, try to keep column header labels short, simple, and descriptive. They will be used extensively as you process your data, so efficient labels enable you to be more efficient. Try to keep them all one case (either all uppercase or lowercase), do not use spaces, and limit special characters to \_ or . (and stay consistent on which character you use as a word separator if you choose to use one).
+:::
+
+Additionally, keep R data objects in mind when you are making or editing your data files. Most data files are imported as dataframes. Due to the constraints of dataframes, keep the data values in each column the same R data type. For example, If you have a column for recording the height of someone, each entry should be a numeric. If you were to mix in a string, such as "six feet", then you will experience difficulty later when you are using your data.
+
+R will do its best to determine what data type each column should be during the importation process. However, it can make mistakes. We will cover how to handle that in a later section.
+
+## Data Formats
+
+The first step to working with data in R is to import data in a common format into your R session. Data in the form of tables are normally provided in either an excel (.xlsx) or comma separated format (.csv). The excel format can only be opened in Microsoft Excel or other specialty programs. CSV files are text files that separate columns in each row using a separator character, commonly a comma (hence the name!).
+
+Excel files provide additional features that can be both useful and cause complications when importing them to R. While they support multiple sheets in one file, equations, color formatting, and more, these features are not supported in R. Try to keep your data files simple and readable.
+
+::: callout-caution
+Do not use Apple Pages to open provided .xlsx or CSV files! Automatic changes done to the file when opened by Pages will cause the file to fail to import to R.
+:::
+
+CSV files are much simpler than Excel files but can be more difficult to use to a beginner. They can be opened using Excel or a text editor such as TextEdit or BBEdit. However, be careful when using a text editor! Make sure it is set to save files in a plain text format. Many editors default to rich text, which supports different fonts and features common in files such as Word documents. However, the formatting will confuse R when you try to import the file.
+
+## Importing Data Using Base R
+
+R can natively import CSV files using the function `read.csv()`. However, before we can use the function, we have to tell R where to look for files. To do so, you have to set your working directory. A working directory is a folder where R looks for your scripts and files that you use in your scripts. The easiest way to set this is to go to the folder in the file pane then, in the menu bar, click **Session -\> Set Working Directory -\> To Files Pane Location**.
+
+Once your working directory is set, we can import our files. If we had a CSV file in our working directory, then we would use the following function to assign the dataframe to variable:
+
+```{r}
+#| eval: false
+our_data <- read.csv("data_file.csv")
+```
+
+This function reads the CSV file called `data_file.csv` that exists in the set working directory and assigns it to the variable `our_data`. By default, `read.csv()` assumes that the first row of data is the header labels, the separator character is a comma, and there are not row names. If your file does not follow these assumptions, then you can use the generic `read.table()` function and set the necessary parameters. For example, if my CSV had no header labels and used semicolons as the separator:
+
+```{r}
+#| eval: false
+different_data <- read.table("another_data_file.csv", header = FALSE, sep = ";")
+```
+
+More information regarding the parameters available in the `read.()` function family can be found in the help menu.
+
+## Importing Excel Files
+
+Base R is not able to read the proprietary format that Excel files use. However, we can use a package to expand R, enabling the importing of Excel files. The package `readxl` is a part of the Tidyverse family of packages and should already be installed on the Bowdoin R Studio server. The function `read_xlsx()` is the Excel equivalent to the `read.csv()` function you learned about above.
+
+```{r}
+#| eval: false
+library(readxl) #Remember! To use a package, you first have to load it into your library!
+excel_data <- read_xlsx("excel_data.xlsx")
+```
+
+The `read_xlsx()` assumes that your excel file is one sheet and has header labels.
