@@ -91,6 +91,13 @@
     "text": "Files Location\nFiles that the RStudio server uses and can access live in your Bowdoin Microwave storage space. This is 10 gigabytes of storage that Bowdoin hosts on their servers that is automatically backed up on a regular basis. This is where you will want to store your data files and R scripts for ease of use. This storage can be accessed by opening the Finder application and clicking the Go button at the top menu bar. Click the Connect to Server… button, which will open a window that looks like the one below.\nTo connect to your Microwave drive, put the drive location in the top field. This will be smb://microwave.bowdoin.edu/home/username with the username being your Bowdoin username. Once you click connect, you will be asked to log in with your Bowdoin credentials. Once you submit your username and password, a finder window will open and contain your Microwave drive."
   },
   {
+    "objectID": "document_dir/basics/using_rstudio.html#mini-check",
+    "href": "document_dir/basics/using_rstudio.html#mini-check",
+    "title": "Using R and RStudio",
+    "section": "Mini Check",
+    "text": "Mini Check\n\nHow do you access the Bowdoin RStudio Server?\n\n Download R on your computer Go to rstudio.bowdoin.edu Go to cran.r-project.org\n\nWhere should you put files that you want to use in R?\n\n Upload them to Microwave Download them to the desktop R already has all of your files\n\nYou have a set of R commands you want to use many times. What is the best way to run them?\n\n Type each command in the console one by one Copy and paste them from a Word document Run your commands from a saved R script"
+  },
+  {
     "objectID": "document_dir/basics/basic_functions.html",
     "href": "document_dir/basics/basic_functions.html",
     "title": "Functions",

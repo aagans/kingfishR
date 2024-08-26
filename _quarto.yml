@@ -1,43 +1,42 @@
 project:
   type: website
-
 website:
-  title: "KingfishR: A Bowdoin Biology R Guide"
-  site-path: "/~aagans/"
+  title: 'KingfishR: A Bowdoin Biology R Guide'
+  site-path: /~aagans/
   page-navigation: true
   sidebar:
     logo: images/bcc.png
-    title: "KingfishR: A Bowdoin Biology R Guide"
-    style: "docked"
+    title: 'KingfishR: A Bowdoin Biology R Guide'
+    style: docked
     search: true
     collapse-level: 1
     contents:
-      - text: Home
-        href: index.qmd
-      - text: "---"
-      - section: "About"
-        contents: document_dir/about/*
-      - text: "---"
-      - section: "R Basics"
-        contents: document_dir/basics/*
-      - section: "Data Wrangling"
-        contents: document_dir/data_wrangling/*
-      - section: "Data Visualization"
-        contents: document_dir/data_visualization/*
-      - section: "Statistical Analysis"
-        contents: document_dir/stats/*
-      - section: "Biological Applications"
-        contents: document_dir/bio_apps/*
+    - text: Home
+      href: index.qmd
+    - text: '---'
+    - section: About
+      contents: document_dir/about/*
+    - text: '---'
+    - section: R Basics
+      contents: document_dir/basics/*
+    - section: Data Wrangling
+      contents: document_dir/data_wrangling/*
+    - section: Data Visualization
+      contents: document_dir/data_visualization/*
+    - section: Statistical Analysis
+      contents: document_dir/stats/*
+    - section: Biological Applications
+      contents: document_dir/bio_apps/*
   favicon: images/favicon.png
-
 format:
   html:
     theme: flatly
-    css: styles.css
+    css:
+    - styles.css
+    - include/webex.css
     toc: true
     toc-depth: 5
     link-external-icon: true
     link-external-newwindow: true
-
+    include-after-body: include/webex.js
 editor: visual
-
