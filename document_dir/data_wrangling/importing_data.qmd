@@ -30,7 +30,7 @@ The first step to working with data in R is to import data in a common format in
 Excel files provide additional features that can be both useful and cause complications when importing them to R. While they support multiple sheets in one file, equations, color formatting, and more, these features are not supported in R. Try to keep your data files simple and readable.
 
 ::: callout-caution
-Do not use Apple Pages to open provided .xlsx or CSV files! Automatic changes done to the file when opened by Pages will cause the file to fail to import to R.
+Do not use Apple Numbers to open provided .xlsx or CSV files! Automatic changes done to the file when opened by Numbers will cause the file to fail to import to R.
 :::
 
 CSV files are much simpler than Excel files but can be more difficult to use to a beginner. They can be opened using Excel or a text editor such as TextEdit or BBEdit. However, be careful when using a text editor! Make sure it is set to save files in a plain text format. Many editors default to rich text, which supports different fonts and features common in files such as Word documents. However, the formatting will confuse R when you try to import the file.
