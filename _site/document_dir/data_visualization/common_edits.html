@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>KingfishR: A Bowdoin Biology R Guide - An R Guide for Bowdoin Biology Students</title>
+<title>KingfishR: A Bowdoin Biology R Guide - Common Visual Edits</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,45 +54,28 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../document_dir/stats/stats.html" rel="next">
+<link href="../../document_dir/data_visualization/visualization.html" rel="prev">
+<link href="../../images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -112,152 +95,10 @@ div.csl-indent {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0/min/vs/editor/editor.main.css">
-
-<style>
-  .monaco-editor pre {
-    background-color: unset !important;
-  }
-
-  .btn-webr {
-    background-color: #EEEEEE;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0; /* Extra styling for consistency */
-    display: inline-block;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #000;
-    text-align: center;
-    text-decoration: none;
-    -webkit-text-decoration: none;
-    -moz-text-decoration: none;
-    -ms-text-decoration: none;
-    -o-text-decoration: none;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    border-color: #dee2e6;
-    border: 1px solid rgba(0,0,0,0);
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    border-radius: 0.25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  }
-
-  .btn-webr:hover {
-    color: #000;
-    background-color: #e3e6ea;
-    border-color: #e1e5e9;
-  }
-
-  .btn-webr:disabled,.btn-webr.disabled,fieldset:disabled .btn-webr {
-    pointer-events: none;
-    opacity: .65
-  }
-</style>
-
-<script type="module">
-
-  // Start a timer
-  const initializeWebRTimerStart = performance.now();
-
-  // Determine if we need to install R packages
-  var installRPackagesList = [''];
-  // Check to see if we have an empty array, if we do set to skip the installation.
-  var setupRPackages = !(installRPackagesList.indexOf("") !== -1);
-
-  // Display a startup message?
-  var showStartupMessage = false;
-  var showHeaderMessage = false;
-  if (showStartupMessage) {
-
-    // Create the outermost div element
-    var quartoTitleMeta = document.createElement("div");
-    quartoTitleMeta.classList.add("quarto-title-meta");
-
-    // Create the first inner div element
-    var firstInnerDiv = document.createElement("div");
-
-    // Create the second inner div element with "WebR Status" heading 
-    // and contents
-    var secondInnerDiv = document.createElement("div");
-    secondInnerDiv.classList.add("quarto-title-meta-heading");
-    secondInnerDiv.innerText = "WebR Status";
-
-    // Add another inner div
-    var secondInnerDivContents = document.createElement("div");
-    secondInnerDivContents.classList.add("quarto-title-meta-contents");
-
-    // Describe the WebR state
-    var startupMessageWebR = document.createElement("p");
-    startupMessageWebR.innerText = "🟡 Loading...";
-    startupMessageWebR.setAttribute("id", "startup");
-    // Add `aria-live` to auto-announce the startup status to screen readers
-    startupMessageWebR.setAttribute("aria-live", "assertive");
-
-    // Put everything together
-    secondInnerDivContents.appendChild(startupMessageWebR);
-
-    // Add a status indicator for COOP and COEP Headers
-    if (showHeaderMessage) {
-      var crossOriginMessage = document.createElement("p");
-      crossOriginMessage.innerText = `${crossOriginIsolated ? '🟢' : '🟡'} COOP & COEP Headers`;
-      crossOriginMessage.setAttribute("id", "coop-coep-header");
-      secondInnerDivContents.appendChild(crossOriginMessage);
-    }
-
-    firstInnerDiv.appendChild(secondInnerDiv);
-    firstInnerDiv.appendChild(secondInnerDivContents);
-    quartoTitleMeta.appendChild(firstInnerDiv);
-
-    // Add new element as last child in header element
-    var header = document.getElementById("title-block-header");
-    header.appendChild(quartoTitleMeta);
-  }
-
-  // Retrieve the webr.mjs
-  import { WebR, ChannelType } from "https://webr.r-wasm.org/v0.2.1/webr.mjs";
-
-  // Populate WebR options with defaults or new values based on 
-  // webr meta
-  globalThis.webR = new WebR({
-    "baseURL": "",
-    "serviceWorkerUrl": "",
-    "homedir": "/home/web_user", 
-    "channelType": ChannelType.Automatic
-  });
-
-  // Initialization WebR
-  await globalThis.webR.init();
-
-  // Setup a shelter
-  globalThis.webRCodeShelter = await new globalThis.webR.Shelter();
-
-  // Installing Packages
-  if (showStartupMessage && setupRPackages) {
-    // If initialized, but we have packages to install switch status
-    startupMessageWebR.innerText = "🟡 Installing package dependencies..."
-    // Install packages
-    await globalThis.webR.installPackages(installRPackagesList)
-  }
-
-  // Switch to allowing code to be executed
-  document.querySelectorAll(".btn-webr").forEach((btn) => {
-    btn.innerText = "Run code";
-    btn.disabled = false;
-  });
-
-  // Stop timer
-  const initializeWebRTimerEnd = performance.now();
-
-  if (showStartupMessage) {
-    // If initialized, switch to a green light
-    startupMessageWebR.innerText = "🟢 Ready!"
-  }
-</script>
 
 
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../include/webex.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -269,7 +110,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../document_dir/data_visualization/visualization.html">Data Visualization</a></li><li class="breadcrumb-item"><a href="../../document_dir/data_visualization/common_edits.html">Common Visual Edits</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -283,11 +124,11 @@ div.csl-indent {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/bcc.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/bcc.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">KingfishR: A Bowdoin Biology R Guide</a> 
+      <a href="../../">KingfishR: A Bowdoin Biology R Guide</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -299,7 +140,7 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
@@ -315,25 +156,25 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/about/about.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/about/about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Purpose</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/about/author_info.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/about/author_info.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The Author</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/about/other_software_licenses.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/about/other_software_licenses.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Incorporated Software &amp; Media</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/about/guide_license.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/about/guide_license.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Guide License</span></a>
   </div>
 </li>
@@ -351,37 +192,37 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/basics/using_rstudio.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/basics/using_rstudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Using R and RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/basics/working_r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/basics/working_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Variables and Arithmetic</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/basics/data_types.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/basics/data_types.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Objects and Data Structures</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/basics/basic_functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/basics/basic_functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/basics/bool_logic.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/basics/bool_logic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Boolean Logic</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/basics/extending_r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/basics/extending_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Extending R</span></a>
   </div>
 </li>
@@ -398,13 +239,13 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/data_wrangling/importing_data.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/data_wrangling/importing_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Importing Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/data_wrangling/working_with_data.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/data_wrangling/working_with_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Working with Dataframes</span></a>
   </div>
 </li>
@@ -412,22 +253,22 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">Data Visualization</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/data_visualization/visualization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/data_visualization/visualization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualizing Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/data_visualization/common_edits.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/data_visualization/common_edits.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Common Visual Edits</span></a>
   </div>
 </li>
@@ -444,7 +285,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/stats/stats.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/stats/stats.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Statistical Tests in R</span></a>
   </div>
 </li>
@@ -461,7 +302,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./document_dir/bio_apps/bio_special.html" class="sidebar-item-text sidebar-link">
+  <a href="../../document_dir/bio_apps/bio_special.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R for Biological Questions</span></a>
   </div>
 </li>
@@ -477,28 +318,24 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-r" id="toc-what-is-r" class="nav-link active" data-scroll-target="#what-is-r">What is R?</a></li>
-  <li><a href="#what-can-i-do-with-r" id="toc-what-can-i-do-with-r" class="nav-link" data-scroll-target="#what-can-i-do-with-r">What can I do with R?</a></li>
-  <li><a href="#how-do-i-use-this-guide" id="toc-how-do-i-use-this-guide" class="nav-link" data-scroll-target="#how-do-i-use-this-guide">How do I use this guide?</a></li>
+  <li><a href="#labels" id="toc-labels" class="nav-link active" data-scroll-target="#labels">Labels</a>
+  <ul>
+  <li><a href="#mappings-text" id="toc-mappings-text" class="nav-link" data-scroll-target="#mappings-text">Mappings Text</a></li>
+  <li><a href="#axis-breaks-limits" id="toc-axis-breaks-limits" class="nav-link" data-scroll-target="#axis-breaks-limits">Axis Breaks &amp; Limits</a>
+  <ul>
+  <li><a href="#discrete-axes" id="toc-discrete-axes" class="nav-link" data-scroll-target="#discrete-axes">Discrete Axes</a></li>
+  <li><a href="#continuous-axes" id="toc-continuous-axes" class="nav-link" data-scroll-target="#continuous-axes">Continuous Axes</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0/min/vs/loader.js"></script>
-<script type="module">
-
-  // Configure the Monaco Editor's loader
-  require.config({
-    paths: {
-      'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0/min/vs'
-    }
-  });
-</script>
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">An R Guide for Bowdoin Biology Students</h1>
+<h1 class="title">Common Visual Edits</h1>
 </div>
 
 
@@ -513,226 +350,95 @@ div.csl-indent {
 
 </header>
 
-<p>Welcome! to the guide for using R as a biology student at Bowdoin College! This guide will act as a comprehensive introduction to the R statistical programming language and its applications in the field of biology. Included in this guide are: an introduction to using R, an overview of R structure, data manipulation, data visualization/graphing, statistical analyses, biology-specific packages, and intermediate/advanced R use cases. This guide can be used by complete R beginners, people with experience with other programming languages, and even people with R experience outside the field of biology.</p>
-<section id="what-is-r" class="level1">
-<h1>What is R?</h1>
-<p>R is a statistical programming language developed by Ross Ihaka and Robert Gentleman.<span class="citation" data-cites="giorgi2022"><sup><a href="#ref-giorgi2022" role="doc-biblioref">1</a></sup></span> Based on the principles of free (as in freedom) open source software (FOSS), the R programming language is freely available at the <a href="https://cran.r-project.org/">Comprehensive R Archive Newtork (CRAN)</a> and can run on Windows, Linus, and MacOS platforms.</p>
-<p>So why use R instead of other statistical packages, such as SPSS, SAS, Stata, Prism, or others?</p>
-<ul>
-<li><p>It is a standard tool in most academic disciplines that use statistical analyses for research and industry.<span class="citation" data-cites="muenchen2012"><sup><a href="#ref-muenchen2012" role="doc-biblioref">2</a></sup></span> In fact, over 54% of all published literature articles in the top 30 journals in ecology used R.<span class="citation" data-cites="lai2019"><sup><a href="#ref-lai2019" role="doc-biblioref">3</a></sup></span></p></li>
-<li><p>R has an active community supporting it. Tens of thousands of packages, the main way of extended R’s capabilities, have been created and are actively maintained.<span class="citation" data-cites="thecomp"><sup><a href="#ref-thecomp" role="doc-biblioref">4</a></sup></span></p></li>
-<li><p>Due to its open source nature, the source code can be freely investigated, ensuring confidence in its accuracy.</p></li>
-<li><p>It is free!</p></li>
-</ul>
-</section>
-<section id="what-can-i-do-with-r" class="level1">
-<h1>What can I do with R?</h1>
-<p>R is a programming language, so almost anything you can think of! However, you most likely would not want to make a video game using R. R is specialized to statistical analysis and data science. We will be using it to process our data, run statistical tests, and to graph our results. However, this is just the tip of the iceberg of what you can do with R! From analyzing genomic data sets, to creating machine learning models, to GIS analysis, R can do it all and even more.</p>
-</section>
-<section id="how-do-i-use-this-guide" class="level1">
-<h1>How do I use this guide?</h1>
-<p>This guide is broken into different sections that each cover information about R. In these sections, there will be text explanations such as this, and also code blocks with relevant R code. By pressing the “Run code” button, the program will run and you will be able to see the results below the block. For example, try this simple code block:</p>
-<button class="btn btn-default btn-webr" disabled="" type="button" id="webr-run-button-1">Loading
-  webR...</button>
-<div id="webr-editor-1"></div>
-<div id="webr-code-output-1" aria-live="assertive">
-  <pre style="visibility: hidden"></pre>
+<p>While it is straightforward to make a graph using <code>ggplot2</code> in R, it can be difficult to make it look exactly how you want it to. A lot of the default settings do make a good graph, but there are a few common tweaks that are an easy way to bring your plots to a whole new level.</p>
+<section id="labels" class="level1">
+<h1>Labels</h1>
+<p>Labels are the text that define all of the different parts of our graphs. While R is good about automatically choosing many of the labels based on our data sets, a lot of the time you may want to change them to make them more descriptive or remove extraneous ones.</p>
+<section id="mappings-text" class="level2">
+<h2 class="anchored" data-anchor-id="mappings-text">Mappings Text</h2>
+<p>Using our iris plot as an example, we see that ggplot2 will default to using column headers as labels.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co">#Loading ggplot2 package</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"iris"</span>) <span class="co">#Loading the built-in mtcars data set</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Petal.Width)) <span class="sc">+</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"summary"</span>, <span class="at">fun =</span> <span class="st">"mean"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="common_edits_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
-<script type="module">
-  // Retrieve webR code cell information
-  const runButton = document.getElementById("webr-run-button-1");
-  const outputDiv = document.getElementById("webr-code-output-1");
-  const editorDiv = document.getElementById("webr-editor-1");
-
-  // Add a light grey outline around the code editor
-  editorDiv.style.border = "1px solid #eee";
-
-  // Load the Monaco Editor and create an instance
-  let editor;
-  require(['vs/editor/editor.main'], function () {
-    editor = monaco.editor.create(editorDiv, {
-      value: `1 + 1`,
-      language: 'r',
-      theme: 'vs-light',
-      automaticLayout: true,           // TODO: Could be problematic for slide decks
-      scrollBeyondLastLine: false,
-      minimap: {
-        enabled: false
-      },
-      fontSize: '17.5rem',               // Bootstrap is 1 rem
-      renderLineHighlight: "none",     // Disable current line highlighting
-      hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
-    });
-
-    // Dynamically modify the height of the editor window if new lines are added.
-    let ignoreEvent = false;
-    const updateHeight = () => {
-      const contentHeight = editor.getContentHeight();
-      // We're avoiding a width change
-      //editorDiv.style.width = `${width}px`;
-      editorDiv.style.height = `${contentHeight}px`;
-      try {
-        ignoreEvent = true;
-
-        // The key to resizing is this call
-        editor.layout();
-      } finally {
-        ignoreEvent = false;
-      }
-    };
-
-    // Registry of keyboard shortcuts that should be re-added to each editor window
-    // when focus changes.
-    const addWebRKeyboardShortCutCommands = () => {
-      // Add a keydown event listener for Shift+Enter to run all code in cell
-      editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, () => {
-
-        // Retrieve all text inside the editor
-        executeCode(editor.getValue());
-      });
-
-      // Add a keydown event listener for CMD/Ctrl+Enter to run selected code
-      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
-        // Get the selected text from the editor
-        const selectedText = editor.getModel().getValueInRange(editor.getSelection());
-        // Code to run when Ctrl+Enter is pressed (run selected code)
-        executeCode(selectedText);
-      });
-    }
-
-    // Register an on focus event handler for when a code cell is selected to update
-    // what keyboard shortcut commands should work.
-    // This is a workaround to fix a regression that happened with multiple
-    // editor windows since Monaco 0.32.0 
-    // https://github.com/microsoft/monaco-editor/issues/2947
-    editor.onDidFocusEditorText(addWebRKeyboardShortCutCommands);
-
-    // Register an on change event for when new code is added to the editor window
-    editor.onDidContentSizeChange(updateHeight);
-
-    // Manually re-update height to account for the content we inserted into the call
-    updateHeight();
-  });
-
-  // Function to execute the code (accepts code as an argument)
-  async function executeCode(codeToRun) {
-    // Disable run button for code cell active
-    runButton.disabled = true;
-
-    // Create a canvas variable for graphics
-    let canvas = undefined;
-
-    // Initialize webR
-    await globalThis.webR.init();
-
-    // Setup a webR canvas by making a namespace call into the {webr} package
-    await webR.evalRVoid("webr::canvas(width=504, height=360)");
-
-    // Capture output data from evaluating the code
-    const result = await webRCodeShelter.captureR(codeToRun, {
-      withAutoprint: true,
-      captureStreams: true,
-      captureConditions: false//,
-      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
-    });
-
-    // Start attempting to parse the result data
-    try {
-
-      // Stop creating images
-      await webR.evalRVoid("dev.off()");
-
-      // Merge output streams of STDOUT and STDErr (messages and errors are combined.)
-      const out = result.output.filter(
-        evt => evt.type == "stdout" || evt.type == "stderr"
-      ).map((evt) => evt.data).join("\n");
-
-      // Clean the state
-      const msgs = await webR.flush();
-
-      // Output each image stored
-      msgs.forEach(msg => {
-        // Determine if old canvas can be used or a new canvas is required.
-        if (msg.type === 'canvas'){
-          // Add image to the current canvas
-          if (msg.data.event === 'canvasImage') {
-            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
-          } else if (msg.data.event === 'canvasNewPage') {
-            // Generate a new canvas element
-            canvas = document.createElement("canvas");
-            canvas.setAttribute("width", 2 * 504);
-            canvas.setAttribute("height", 2 * 360);
-            canvas.style.width = "700px";
-            canvas.style.display = "block";
-            canvas.style.margin = "auto";
-          }
-        }
-      });
-
-      // Nullify the outputDiv of content
-      outputDiv.innerHTML = "";
-
-      // Design an output object for messages
-      const pre = document.createElement("pre");
-      if (/\S/.test(out)) {
-        // Display results as text
-        const code = document.createElement("code");
-        code.innerText = out;
-        pre.appendChild(code);
-      } else {
-        // If nothing is present, hide the element.
-        pre.style.visibility = "hidden";
-      }
-      outputDiv.appendChild(pre);
-
-      // Place the graphics on the canvas
-      if (canvas) {
-        const p = document.createElement("p");
-        p.appendChild(canvas);
-        outputDiv.appendChild(p);
-      }
-    } finally {
-      // Clean up the remaining code
-      webRCodeShelter.purge();
-      runButton.disabled = false;
-    }
-  }
-
-  // Add a click event listener to the run button
-  runButton.onclick = function () {
-    executeCode(editor.getValue());
-  };
-</script>
-<p>If it was successful, then you should see a result that says 2. Additionally, there will be some code blocks without the “Run code” button, which are just to explain specific concepts. See below:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>var <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>two.var <span class="ot">&lt;-</span> var <span class="sc">+</span> var</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For some code blocks, there will be code annotations on the right side that appear when you hover your mouse cursor over the icon.</p>
-<div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode r R code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a>var <span class="ot">&lt;-</span> <span class="dv">1</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-lines="1" data-code-annotation="1" data-code-cell="annotated-cell-2">Here is a code annotation!</span>
-</dd>
-</dl>
-
+</div>
+<p>However, often these headers use unusual punctuation or shortenings that are confusing to people who are viewing the graph. Here is how we change that:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Petal.Width)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"summary"</span>, <span class="at">fun =</span> <span class="st">"mean"</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Iris Species"</span>, <span class="at">y =</span> <span class="st">"Petal Width (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="common_edits_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Using the <code>labs()</code> function, you can set the text label for any of the mappings you set in the <code>aes()</code> function.</p>
+</section>
+<section id="axis-breaks-limits" class="level2">
+<h2 class="anchored" data-anchor-id="axis-breaks-limits">Axis Breaks &amp; Limits</h2>
+<p>You may also want to change the text labels for each iris species. Those labels are axis break labels, as each tick is break on the axis. As there are two main types of axes, each axis has two main functions to set the break labels.</p>
+<section id="discrete-axes" class="level3">
+<h3 class="anchored" data-anchor-id="discrete-axes">Discrete Axes</h3>
+<p>An axis is considered discrete when each variable on the axis is its own group. For example, each break represents one species, such as the iris graph above. These are most commonly the x axis or the color/fill grouping.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Petal.Width)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"summary"</span>, <span class="at">fun =</span> <span class="st">"mean"</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Iris Species"</span>, <span class="at">y =</span> <span class="st">"Petal Width (mm)"</span>) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Setosa"</span>, <span class="st">"Versicolor"</span>, <span class="st">"Virginica"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="common_edits_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>By default, R will sort discrete groups alphabetically. If you want to change that, we can use the <code>limits</code> parameter of the <code>scale_x_discrete()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Petal.Width)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"summary"</span>, <span class="at">fun =</span> <span class="st">"mean"</span>) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Iris Species"</span>, <span class="at">y =</span> <span class="st">"Petal Width (mm)"</span>) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="st">"virginica"</span>, <span class="st">"setosa"</span>, <span class="st">"versicolor"</span>), </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Virginica"</span>, <span class="st">"Setosa"</span>, <span class="st">"Versicolor"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="common_edits_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure you re-order your labels when you re-order your discrete limits! Otherwise, you can end up with a group called Virginica which is actually Setosa.</p>
+</div>
+</div>
+</section>
+<section id="continuous-axes" class="level3">
+<h3 class="anchored" data-anchor-id="continuous-axes">Continuous Axes</h3>
+<p>An axis is considered continuous when it is composed of a range of numbers where a value can exist anywhere within that range. For example, most numeric measurements, such as height or length, would be continuous. This is most commonly the y axis, like in our iris plot. While R is good at guessing the range that best fits, sometimes you may want to edit the lower and upper limits. A good example of when you would want to do this is if you want two different graphs to be comparable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Petal.Width)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"summary"</span>, <span class="at">fun =</span> <span class="st">"mean"</span>) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Iris Species"</span>, <span class="at">y =</span> <span class="st">"Petal Width (mm)"</span>) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="st">"virginica"</span>, <span class="st">"setosa"</span>, <span class="st">"versicolor"</span>), </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Virginica"</span>, <span class="st">"Setosa"</span>, <span class="st">"Versicolor"</span>)) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="common_edits_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
 </section>
+</section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
-<div id="ref-giorgi2022" class="csl-entry" role="listitem">
-1. Giorgi FM, Ceraolo C, Mercatelli D. The r language: An engine for bioinformatics and data science. Life. 2022;12(5):648. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9148156/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9148156/</a>. doi:<a href="https://doi.org/10.3390/life12050648">10.3390/life12050648</a>
-</div>
-<div id="ref-muenchen2012" class="csl-entry" role="listitem">
-2. Muenchen R. The popularity of data science software | r4stats.com. 2012. <a href="https://r4stats.com/articles/popularity/">https://r4stats.com/articles/popularity/</a>
-</div>
-<div id="ref-lai2019" class="csl-entry" role="listitem">
-3. Lai J, Lortie CJ, Muenchen RA, Yang J, Ma K. Evaluating the popularity of R in ecology. Ecosphere. 2019;10(1):e02567. <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ecs2.2567">https://onlinelibrary.wiley.com/doi/abs/10.1002/ecs2.2567</a>. doi:<a href="https://doi.org/10.1002/ecs2.2567">10.1002/ecs2.2567</a>
-</div>
-<div id="ref-thecomp" class="csl-entry" role="listitem">
-4. The comprehensive r archive network. <a href="https://cran.r-project.org/">https://cran.r-project.org/</a>
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script>
 
 /* update total correct if #webex-total_correct exists */
@@ -1253,6 +959,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../document_dir/data_visualization/visualization.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Visualizing Data</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../document_dir/stats/stats.html" class="pagination-link">
+        <span class="nav-page-text">Statistical Tests in R</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
