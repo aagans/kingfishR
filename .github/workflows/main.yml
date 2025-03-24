@@ -18,6 +18,6 @@ jobs:
         with:
           source-files: '_site/*'
           destination-username: 'aagans'
-          destination-repository: 'aagans.github.io'
+          destination-repository: 'kingfishR_site'
           commit-email: 'ajagans812@gmail.com'
           destination-branch: 'main'
